@@ -1,0 +1,24 @@
+package PersonMsgPackage;
+
+option java_outer_classname = "PersonMsgClassName";
+
+message Person {
+	
+	// ID（必需）
+	required int32 id = 1;
+	
+	// 姓名（必需）
+	required string name = 2;
+	
+	// email（可选）
+	optional string email = 3;
+	
+	message Friend {
+		required string name = 1;
+		
+		required int32 age = 2;
+	}
+
+	// 朋友（集合）
+	repeated Friend friends = 4;
+}
